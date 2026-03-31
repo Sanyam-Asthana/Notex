@@ -7,13 +7,20 @@
     --button-hover-bg: #AA0000;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 html {
 	scroll-behaviour: smooth;
 }
 
 body {
     font-family: "Trebuchet MS", Arial, sans-serif;
-    margin: 2.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 2.5rem 2.5rem;
     color: var(--primary-text);
     max-width: 75ch;
     margin-inline: auto;
@@ -47,6 +54,10 @@ h1 a {
   color: var(--primary-text);
 }
 
+h1 {
+    line-height: 1;
+}
+
 a {
   color: var(--accent-color);
 }
@@ -60,4 +71,41 @@ code {
 li {
   margin-top: 2px;
   margin-bottom: 2px;
+}
+
+header {
+    margin-bottom: clamp(1rem, 20vh, 1.5rem);
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: clamp(60%, 80%, 100%);
+}
+
+nav a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: clamp(0.7rem, 40vh, 1.2rem);
+}
+
+nav a:hover {
+    color: var(--button-hover-bg);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+main {
+    flex: 1;
 }
